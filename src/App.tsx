@@ -1080,13 +1080,13 @@ function App() {
           <div className="animate-section">
             <img
               src="/images/IMG_5698_2.JPG"
-              alt="Sarah Chen"
+              alt="Liz Portugal"
               className="w-full h-[500px] object-cover rounded-lg shadow-lg mb-6"
             />
-            <h3 className="text-2xl font-bold text-[#111111] mb-2">Sarah Chen</h3>
+            <h3 className="text-2xl font-bold text-[#111111] mb-2">Liz Portugal</h3>
             <p className="text-[#D4A24F] font-medium mb-4">Co-Founder & Lead Esthetician</p>
             <p className="text-[#6F6F6F] leading-relaxed mb-4">
-              With over 12 years of experience in luxury spa treatments, Sarah brings her expertise in advanced skincare and facial techniques to every appointment. Certified in medical esthetics and trained in Paris.
+              With over 12 years of experience in luxury spa treatments, Liz brings her expertise in advanced skincare and facial techniques to every appointment. Certified in medical esthetics and trained in Paris.
             </p>
             <div className="flex flex-wrap gap-2">
               <Badge variant="outline">Licensed Esthetician</Badge>
