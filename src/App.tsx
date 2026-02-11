@@ -1091,7 +1091,7 @@ function App() {
             <div className="flex flex-wrap gap-2">
               
               <Badge variant="outline">Certified Advanced Medical Aesthetician</Badge>
-              <Badge variant="outline">Certified Professional Make-up Artist/Badge>
+              <Badge variant="outline">Certified Professional Make-up Artist</Badge>
             </div>
           </div>
 
