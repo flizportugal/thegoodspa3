@@ -1102,7 +1102,7 @@ function App() {
               className="w-full h-[500px] object-contain rounded-lg shadow-lg mb-6 bg-[#F8F5F0]"
             />
             <h3 className="text-2xl font-bold text-[#111111] mb-2">Dawn Miller</h3>
-            <p className="text-[#D4A24F] font-medium mb-4">Co-Founder & Creative Director</p>
+            <p className="text-[#D4A24F] font-medium mb-4">Co-Founder</p>
             <p className="text-[#6F6F6F] leading-relaxed mb-4">
               Dawn brings over 24 years of experience in the aesthetic industry, having refined her craft since 2001. As a certified advanced aesthetician, she delivers transformative skincare treatments with precision and care, helping clients achieve their most radiant, healthy skin through evidence-based techniques and personalized service.
             </p>
