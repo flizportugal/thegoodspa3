@@ -1099,7 +1099,7 @@ function App() {
             <img
               src="/images/8149644F-4122-4DAE-9069-C4B92B4B05AA.PNG"
               alt="Dawn Miller"
-              className="w-full h-[500px] object-cover rounded-lg shadow-lg mb-6"
+              className="w-full h-[500px] object-contain rounded-lg shadow-lg mb-6 bg-[#F8F5F0]"
             />
             <h3 className="text-2xl font-bold text-[#111111] mb-2">Dawn Miller</h3>
             <p className="text-[#D4A24F] font-medium mb-4">Co-Founder & Creative Director</p>
