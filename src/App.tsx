@@ -320,8 +320,7 @@ function App() {
           <div className="md:ml-auto md:w-[40vw] md:mr-[4vw]">
             <Badge className="mb-4 bg-[#D4A24F] text-white hover:bg-[#D4A24F]">60-90 MIN</Badge>
             <h2 className="heading-display text-white text-[clamp(32px,4vw,56px)] mb-6 drop-shadow-lg">
-              <span className="block">Deep-Tissue</span>
-              <span className="block">Massage</span>
+              <span className="block">WELLNESS MASSAGE</span>
             </h2>
             <p className="text-white/90 text-lg md:text-xl mb-8 max-w-md drop-shadow">
               Targeted pressure where you need it—neck, back, shoulders, legs.
