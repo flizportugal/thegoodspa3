@@ -826,7 +826,7 @@ function App() {
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <div>
-                      <CardTitle className="text-xl mb-2">Wellness Massage</CardTitle>
+                      <CardTitle className="text-xl mb-2">wellness Massage</CardTitle>
                       <CardDescription>Targeted relief</CardDescription>
                     </div>
                     <Badge className="bg-[#D4A24F]">60-90 min</Badge>
