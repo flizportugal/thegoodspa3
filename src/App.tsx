@@ -1084,7 +1084,7 @@ function App() {
               className="w-full h-[500px] object-cover rounded-lg shadow-lg mb-6"
             />
             <h3 className="text-2xl font-bold text-[#111111] mb-2">Liz Portugal</h3>
-            <p className="text-[#D4A24F] font-medium mb-4">Founder & Lead Esthetician</p>
+            <p className="text-[#D4A24F] font-medium mb-4">Founder</p>
             <p className="text-[#6F6F6F] leading-relaxed mb-4">
               With 12 years in the beauty industry, Liz has mastered both the art and science of beauty—from professional makeup artistry to advanced medical esthetics. Certified in medical esthetics and trained across multiple modalities, she brings comprehensive expertise to every treatment.
             </p>
