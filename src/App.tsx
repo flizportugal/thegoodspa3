@@ -1097,7 +1097,7 @@ function App() {
 
           <div className="animate-section">
             <img
-              src="/images/3A22D93D-5827-429E-9868-08A4DEC5229A.PNG"
+              src="/images/8149644F-4122-4DAE-9069-C4B92B4B05AA.PNG"
               alt="Dawn Miller"
               className="w-full h-[500px] object-cover rounded-lg shadow-lg mb-6"
             />
