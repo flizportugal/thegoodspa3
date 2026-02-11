@@ -1089,9 +1089,9 @@ function App() {
               With 12 years in the beauty industry, Liz has mastered both the art and science of beauty—from professional makeup artistry to advanced medical esthetics. Certified in medical esthetics and trained across multiple modalities, she brings comprehensive expertise to every treatment.
             </p>
             <div className="flex flex-wrap gap-2">
-              <Badge variant="outline">Licensed Esthetician</Badge>
-              <Badge variant="outline">Certified Medical Aesthetician</Badge>
-              <Badge variant="outline">LED Therapy Certified</Badge>
+              
+              <Badge variant="outline">Certified Advanced Medical Aesthetician</Badge>
+              <Badge variant="outline">Certified Professional Make-up Artist/Badge>
             </div>
           </div>
 
@@ -1104,12 +1104,12 @@ function App() {
             <h3 className="text-2xl font-bold text-[#111111] mb-2">Dawn Miller</h3>
             <p className="text-[#D4A24F] font-medium mb-4">Co-Founder & Creative Director</p>
             <p className="text-[#6F6F6F] leading-relaxed mb-4">
-              Dawn's passion for beauty artistry shines through in every makeup application and hair styling session. Former lead artist at a top Toronto salon, she specializes in bridal and editorial looks.
+              Dawn brings over 24 years of experience in the aesthetic industry, having refined her craft since 2001. As a certified advanced aesthetician, she delivers transformative skincare treatments with precision and care, helping clients achieve their most radiant, healthy skin through evidence-based techniques and personalized service.
             </p>
             <div className="flex flex-wrap gap-2">
               <Badge variant="outline">Licensed Cosmetologist</Badge>
-              <Badge variant="outline">Bridal Specialist</Badge>
-              <Badge variant="outline">Hair Extension Certified</Badge>
+              <Badge variant="outline">Certified Advanced Medical Aesthetician</Badge>
+             
             </div>
           </div>
         </div>
