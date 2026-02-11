@@ -305,12 +305,12 @@ function App() {
         </div>
       </section>
 
-      {/* Section 4: Deep-Tissue Massage */}
+      {/* Section 4: Wellness Massage */}
       <section className="relative h-screen w-full overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="/images/massage_shoulders.jpg" 
-            alt="Deep tissue massage" 
+            alt="Wellness massage" 
             className="w-full h-full object-cover"
           />
           <div className="vignette-overlay absolute inset-0" />
@@ -546,7 +546,7 @@ function App() {
               },
               {
                 name: 'Amanda K.',
-                service: 'Deep-Tissue Massage',
+                service: 'Wellness Massage',
                 quote: 'I have chronic back pain and this massage provided so much relief. The therapist was professional and skilled.',
                 rating: 5
               }
@@ -826,7 +826,7 @@ function App() {
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <div>
-                      <CardTitle className="text-xl mb-2">Deep-Tissue Massage</CardTitle>
+                      <CardTitle className="text-xl mb-2">Wellness Massage</CardTitle>
                       <CardDescription>Targeted relief</CardDescription>
                     </div>
                     <Badge className="bg-[#D4A24F]">60-90 min</Badge>
@@ -1650,7 +1650,7 @@ function App() {
             <select className="w-full border border-[#E5E5E5] rounded-md p-2">
               <option>Signature Facial - $149</option>
               <option>Anti-Aging Facial - $199</option>
-              <option>Deep-Tissue Massage - $139</option>
+              <option>Wellness Massage - $139</option>
               <option>Swedish Massage - $119</option>
               <option>Bridal Makeup - $299</option>
               <option>Event Makeup - $149</option>
