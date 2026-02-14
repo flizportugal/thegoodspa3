@@ -3,7 +3,7 @@
 
 // Example for email content (use with your email service like SendGrid, etc.)
 
-const appointmentConfirmationEmail = (bookingData) => ({
+const appointmentConfirmationEmail = (bookingData: { email: string; name: string; address: string }) => ({
   to: bookingData.email,
   subject: "Your GoodSpa Appointment Confirmation",
   html: `
