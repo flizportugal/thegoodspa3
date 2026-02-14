@@ -24,7 +24,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState('home');
+  const [currentPage, setCurrentPage] = useState(() => {
+    const hash = window.location.hash.slice(1);
+    return hash || 'home';
+  });
   const [showBookingDialog, setShowBookingDialog] = useState(false);
   const [isSubmittingBooking, setIsSubmittingBooking] = useState(false);
 
@@ -46,6 +49,16 @@ function App() {
   const portfolioRef = useRef<HTMLDivElement>(null);
   const giftCardsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.slice(1);
+      setCurrentPage(hash || 'home');
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   useEffect(() => {
     // Hero entrance animation
@@ -95,6 +108,7 @@ function App() {
   }, [currentPage]);
 
   const navigateToPage = (page: string) => {
+    window.location.hash = page;
     setCurrentPage(page);
     setIsMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
