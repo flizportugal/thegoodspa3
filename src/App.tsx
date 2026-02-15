@@ -15,9 +15,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { supabase } from '@/lib/supabase';
-import { toast } from 'sonner';
-import { Toaster } from '@/components/ui/sonner';
 import AdminBookings from '@/components/AdminBookings';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -29,17 +26,6 @@ function App() {
     return hash || 'home';
   });
   const [showBookingDialog, setShowBookingDialog] = useState(false);
-  const [isSubmittingBooking, setIsSubmittingBooking] = useState(false);
-
-  const [bookingForm, setBookingForm] = useState({
-    service: '',
-    preferred_date: '',
-    preferred_time: '',
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
 
   const heroRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
@@ -114,43 +100,18 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleBookingSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmittingBooking(true);
+  useEffect(() => {
+    if (showBookingDialog) {
+      const script = document.createElement('script');
+      script.src = 'https://square.site/appointments/buyer/widget/f0sebupo4sg8x8/LTEQT2XP6NWZ1.js';
+      script.async = true;
+      document.body.appendChild(script);
 
-    try {
-      const { error } = await supabase
-        .from('bookings')
-        .insert([{
-          name: bookingForm.name,
-          email: bookingForm.email,
-          phone: bookingForm.phone,
-          service: bookingForm.service,
-          preferred_date: bookingForm.preferred_date,
-          preferred_time: bookingForm.preferred_time,
-          message: bookingForm.message || null
-        }]);
-
-      if (error) throw error;
-
-      toast.success('Booking request submitted! We will confirm within 2 hours.');
-      setShowBookingDialog(false);
-      setBookingForm({
-        service: '',
-        preferred_date: '',
-        preferred_time: '',
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
-      });
-    } catch (error) {
-      console.error('Error submitting booking:', error);
-      toast.error('Failed to submit booking. Please try again.');
-    } finally {
-      setIsSubmittingBooking(false);
+      return () => {
+        document.body.removeChild(script);
+      };
     }
-  };
+  }, [showBookingDialog]);
 
   const renderNavigation = () => (
     <>
@@ -1706,107 +1667,13 @@ function App() {
   // Booking Dialog
   const renderBookingDialog = () => (
     <Dialog open={showBookingDialog} onOpenChange={setShowBookingDialog}>
-      <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="heading-display text-2xl">Book Your Appointment</DialogTitle>
         </DialogHeader>
-        <form onSubmit={handleBookingSubmit} className="space-y-4 mt-4">
-          <div>
-            <Label className="text-micro text-[#6F6F6F] mb-2 block">Select Service *</Label>
-            <select
-              required
-              value={bookingForm.service}
-              onChange={(e) => setBookingForm({ ...bookingForm, service: e.target.value })}
-              className="w-full border border-[#E5E5E5] rounded-md p-2"
-            >
-              <option value="">Choose a service...</option>
-              <option value="Signature Facial - $149">Signature Facial - $149</option>
-              <option value="Anti-Aging Facial - $199">Anti-Aging Facial - $199</option>
-              <option value="Wellness Massage - $139">Wellness Massage - $139</option>
-              <option value="Swedish Massage - $119">Swedish Massage - $119</option>
-              <option value="Bridal Makeup - $299">Bridal Makeup - $299</option>
-              <option value="Event Makeup - $149">Event Makeup - $149</option>
-              <option value="Luxury Manicure - $59">Luxury Manicure - $59</option>
-              <option value="Spa Pedicure - $79">Spa Pedicure - $79</option>
-              <option value="Hair Extensions - Consult">Hair Extensions - Consult</option>
-            </select>
-          </div>
-          <div>
-            <Label className="text-micro text-[#6F6F6F] mb-2 block">Preferred Date *</Label>
-            <Input
-              type="date"
-              required
-              value={bookingForm.preferred_date}
-              onChange={(e) => setBookingForm({ ...bookingForm, preferred_date: e.target.value })}
-              className="border-[#E5E5E5]"
-            />
-          </div>
-          <div>
-            <Label className="text-micro text-[#6F6F6F] mb-2 block">Preferred Time *</Label>
-            <select
-              required
-              value={bookingForm.preferred_time}
-              onChange={(e) => setBookingForm({ ...bookingForm, preferred_time: e.target.value })}
-              className="w-full border border-[#E5E5E5] rounded-md p-2"
-            >
-              <option value="">Choose a time...</option>
-              <option value="Morning (9am - 12pm)">Morning (9am - 12pm)</option>
-              <option value="Afternoon (12pm - 5pm)">Afternoon (12pm - 5pm)</option>
-              <option value="Evening (5pm - 8pm)">Evening (5pm - 8pm)</option>
-            </select>
-          </div>
-          <div>
-            <Label className="text-micro text-[#6F6F6F] mb-2 block">Name *</Label>
-            <Input
-              required
-              value={bookingForm.name}
-              onChange={(e) => setBookingForm({ ...bookingForm, name: e.target.value })}
-              placeholder="Your full name"
-              className="border-[#E5E5E5]"
-            />
-          </div>
-          <div>
-            <Label className="text-micro text-[#6F6F6F] mb-2 block">Email *</Label>
-            <Input
-              type="email"
-              required
-              value={bookingForm.email}
-              onChange={(e) => setBookingForm({ ...bookingForm, email: e.target.value })}
-              placeholder="your@email.com"
-              className="border-[#E5E5E5]"
-            />
-          </div>
-          <div>
-            <Label className="text-micro text-[#6F6F6F] mb-2 block">Phone *</Label>
-            <Input
-              type="tel"
-              required
-              value={bookingForm.phone}
-              onChange={(e) => setBookingForm({ ...bookingForm, phone: e.target.value })}
-              placeholder="(416) 555-1234"
-              className="border-[#E5E5E5]"
-            />
-          </div>
-          <div>
-            <Label className="text-micro text-[#6F6F6F] mb-2 block">Special Requests</Label>
-            <Textarea
-              value={bookingForm.message}
-              onChange={(e) => setBookingForm({ ...bookingForm, message: e.target.value })}
-              placeholder="Any allergies or special requests"
-              className="border-[#E5E5E5]"
-            />
-          </div>
-          <Button
-            type="submit"
-            disabled={isSubmittingBooking}
-            className="w-full bg-[#D4A24F] hover:bg-[#c49345] text-white py-4"
-          >
-            {isSubmittingBooking ? 'Submitting...' : 'Request Booking'}
-          </Button>
-          <p className="text-xs text-[#6F6F6F] text-center">
-            We will confirm your appointment within 2 hours. A deposit may be required.
-          </p>
-        </form>
+        <div className="mt-4 min-h-[600px]">
+          <div id="square-appointments-widget"></div>
+        </div>
       </DialogContent>
     </Dialog>
   );
@@ -1854,8 +1721,6 @@ function App() {
       >
         <Calendar size={24} />
       </button>
-
-      <Toaster />
     </div>
   );
 }
