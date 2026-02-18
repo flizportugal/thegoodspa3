@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { 
-  Menu, X, Phone, Calendar, Gift, Users, Star, 
+import {
+  Menu, X, Phone, Calendar, Gift, Users, Star,
   ChevronRight, Instagram, Facebook, Mail, MapPin,
   Clock, Check, ArrowRight, Sparkles, Heart
 } from 'lucide-react';
@@ -15,14 +15,18 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import AdminBookings from '@/components/AdminBookings';
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState('home');
+  const [currentPage, setCurrentPage] = useState(() => {
+    const hash = window.location.hash.slice(1);
+    return hash || 'home';
+  });
   const [showBookingDialog, setShowBookingDialog] = useState(false);
-  
+
   const heroRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
   const howItWorksRef = useRef<HTMLDivElement>(null);
@@ -31,6 +35,16 @@ function App() {
   const portfolioRef = useRef<HTMLDivElement>(null);
   const giftCardsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.slice(1);
+      setCurrentPage(hash || 'home');
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   useEffect(() => {
     // Hero entrance animation
@@ -80,10 +94,24 @@ function App() {
   }, [currentPage]);
 
   const navigateToPage = (page: string) => {
+    window.location.hash = page;
     setCurrentPage(page);
     setIsMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  useEffect(() => {
+    if (showBookingDialog) {
+      const script = document.createElement('script');
+      script.src = 'https://square.site/appointments/buyer/widget/f0sebupo4sg8x8/LTEQT2XP6NWZ1.js';
+      script.async = true;
+      document.body.appendChild(script);
+
+      return () => {
+        document.body.removeChild(script);
+      };
+    }
+  }, [showBookingDialog]);
 
   const renderNavigation = () => (
     <>
@@ -1639,71 +1667,13 @@ function App() {
   // Booking Dialog
   const renderBookingDialog = () => (
     <Dialog open={showBookingDialog} onOpenChange={setShowBookingDialog}>
-      <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="heading-display text-2xl">Book Your Appointment</DialogTitle>
         </DialogHeader>
-        <form className="space-y-4 mt-4">
-          <div>
-            <Label className="text-micro text-[#6F6F6F] mb-2 block">Select Service</Label>
-            <select className="w-full border border-[#E5E5E5] rounded-md p-2">
-              <option>Signature Facial - $149</option>
-              <option>Anti-Aging Facial - $199</option>
-              <option>Wellness Massage - $139</option>
-              <option>Swedish Massage - $119</option>
-              <option>Bridal Makeup - $299</option>
-              <option>Event Makeup - $149</option>
-              <option>Luxury Manicure - $59</option>
-              <option>Spa Pedicure - $79</option>
-              <option>Hair Extensions - Consult</option>
-            </select>
-          </div>
-          <div>
-            <Label className="text-micro text-[#6F6F6F] mb-2 block">Preferred Date</Label>
-            <Input type="date" className="border-[#E5E5E5]" />
-          </div>
-          <div>
-            <Label className="text-micro text-[#6F6F6F] mb-2 block">Preferred Time</Label>
-            <select className="w-full border border-[#E5E5E5] rounded-md p-2">
-              <option>Morning (9am - 12pm)</option>
-              <option>Afternoon (12pm - 5pm)</option>
-              <option>Evening (5pm - 8pm)</option>
-            </select>
-          </div>
-          <div>
-            <Label className="text-micro text-[#6F6F6F] mb-2 block">Name</Label>
-            <Input placeholder="Your full name" className="border-[#E5E5E5]" />
-          </div>
-          <div>
-            <Label className="text-micro text-[#6F6F6F] mb-2 block">Email</Label>
-            <Input placeholder="your@email.com" className="border-[#E5E5E5]" />
-          </div>
-          <div>
-            <Label className="text-micro text-[#6F6F6F] mb-2 block">Phone</Label>
-            <Input placeholder="(416) 555-1234" className="border-[#E5E5E5]" />
-          </div>
-          <div>
-            <Label className="text-micro text-[#6F6F6F] mb-2 block">Address</Label>
-            <Textarea placeholder="Your address for the appointment" className="border-[#E5E5E5]" />
-          </div>
-          <div>
-            <Label className="text-micro text-[#6F6F6F] mb-2 block">Special Requests</Label>
-            <Textarea placeholder="Any allergies or special requests" className="border-[#E5E5E5]" />
-          </div>
-          <Button 
-            type="button"
-            onClick={() => {
-              setShowBookingDialog(false);
-              alert('Thank you! Your booking request has been submitted. We will confirm within 2 hours.');
-            }}
-            className="w-full bg-[#D4A24F] hover:bg-[#c49345] text-white py-4"
-          >
-            Request Booking
-          </Button>
-          <p className="text-xs text-[#6F6F6F] text-center">
-            We will confirm your appointment within 2 hours. A deposit may be required.
-          </p>
-        </form>
+        <div className="mt-4 min-h-[600px]">
+          <div id="square-appointments-widget"></div>
+        </div>
       </DialogContent>
     </Dialog>
   );
@@ -1735,6 +1705,7 @@ function App() {
           "By using The Good Spa services, you agree to these Terms of Service. Our services are provided on an as-is basis. We strive to provide excellent service but make no guarantees about specific results. Cancellations must be made at least 24 hours in advance. Late cancellations may be subject to fees. We reserve the right to refuse service to anyone for any reason. Payment is due at the time of service unless otherwise arranged. Gift cards are non-refundable and do not expire. We are not liable for any allergic reactions. Please inform us of any allergies or sensitivities before your appointment.")}
         {currentPage === 'accessibility' && renderLegalPage('Accessibility Statement',
           "The Good Spa is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards. We welcome your feedback on the accessibility of our website. We aim to conform to WCAG 2.1 Level AA standards. Our website is designed to be compatible with assistive technologies and major browsers. If you need assistance booking or have specific accessibility needs for your appointment, please contact us directly.")}
+        {currentPage === 'admin' && <AdminBookings />}
       </main>
       
       {/* Footer */}
@@ -1744,7 +1715,7 @@ function App() {
       {renderBookingDialog()}
       
       {/* Floating CTA Button (Mobile) */}
-      <button 
+      <button
         onClick={() => setShowBookingDialog(true)}
         className="fixed bottom-6 right-6 w-14 h-14 bg-[#D4A24F] text-white rounded-full shadow-lg flex items-center justify-center hover:bg-[#c49345] transition-colors z-40 md:hidden"
       >
