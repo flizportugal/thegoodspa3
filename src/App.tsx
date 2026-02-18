@@ -461,7 +461,7 @@ function App() {
       </section>
 
       {/* Section 8: How It Works */}
-      <section ref={howItWorksRef} className="py-24 px-6 bg-[#E8C4C4]">
+      <section ref={howItWorksRef} className="py-24 px-6 bg-[#FFFFF0]">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="animate-section">
