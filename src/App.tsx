@@ -202,7 +202,7 @@ function App() {
             <ul className="space-y-2">
               <li className="flex items-center gap-2 text-sm text-[#FAF6F0]/80">
                 <Phone size={14} />
-                <a href="tel:+14165551234" className="hover:text-[#C9A96E]">(416) 555-1234</a>
+                <a href="tel:+16475474498" className="hover:text-[#C9A96E]">(647) 547-4498</a>
               </li>
               <li className="flex items-center gap-2 text-sm text-[#FAF6F0]/80">
                 <Mail size={14} />
@@ -727,7 +727,7 @@ function App() {
                 <div>
                   <Label className="text-micro text-[#FAF6F0]/60 mb-2 block">Phone</Label>
                   <Input
-                    placeholder="(416) 555-1234"
+                    placeholder="(647) 547-4498"
                     className="bg-[#FAF6F0]/10 border-[#FAF6F0]/20 text-[#FAF6F0] placeholder:text-[#FAF6F0]/40"
                   />
                 </div>
@@ -1492,7 +1492,7 @@ function App() {
           <AccordionItem value="item-7" className="bg-[#FAF6F0] mb-4 rounded-lg px-6">
             <AccordionTrigger className="text-[#2C2C2C] font-semibold">How do I book an appointment?</AccordionTrigger>
             <AccordionContent className="text-[#2C2C2C]">
-              You can book online through our website, call us at (416) 555-1234, or email hello@thegoodspa.ca. We typically confirm bookings within 2 hours during business hours.
+              You can book online through our website, call us at (647) 547-4498, or email hello@thegoodspa.ca. We typically confirm bookings within 2 hours during business hours.
             </AccordionContent>
           </AccordionItem>
         </Accordion>
@@ -1519,7 +1519,7 @@ function App() {
                 </div>
                 <div>
                   <p className="text-micro text-[#2C2C2C]">Phone</p>
-                  <a href="tel:+14165551234" className="text-[#2C2C2C] font-medium hover:text-[#C9A96E]">(416) 555-1234</a>
+                  <a href="tel:+16475474498" className="text-[#2C2C2C] font-medium hover:text-[#C9A96E]">(647) 547-4498</a>
                 </div>
               </div>
               <div className="flex items-center gap-4">
