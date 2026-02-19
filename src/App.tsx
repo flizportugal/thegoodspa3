@@ -232,103 +232,6 @@ function App() {
 
   const renderHomePage = () => (
     <div className="min-h-screen">
-      {/* FAQ Section - Top of Page */}
-      <section className="py-20 px-6 bg-[#FFFFF0]">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12 animate-section">
-            <h2 className="heading-display text-[#2C2C2C] text-[clamp(32px,4vw,48px)] mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-[#2C2C2C]/60 text-sm max-w-2xl mx-auto">
-              Everything you need to know about your luxury mobile spa experience
-            </p>
-          </div>
-
-          <Accordion type="single" collapsible className="space-y-4 animate-section">
-            <AccordionItem value="item-1" className="bg-white border border-[#2C2C2C]/10 px-6 rounded-none">
-              <AccordionTrigger className="text-left hover:no-underline py-6">
-                <span className="text-[#2C2C2C] font-medium text-base">
-                  What do I need to prepare for my mobile spa appointment?
-                </span>
-              </AccordionTrigger>
-              <AccordionContent className="text-[#2C2C2C]/70 text-sm pb-6 leading-relaxed">
-                <p className="mb-3">To ensure a seamless, luxurious experience, please prepare:</p>
-                <ul className="space-y-2 ml-6 list-disc">
-                  <li>A clear space of 8 ft x 6 ft (massage table, equipment setup)</li>
-                  <li>Access to one electrical outlet and a sink with hot water</li>
-                  <li>Two clean sheets/towels and one pillowcase</li>
-                  <li>Quiet environment (pets secured, children supervised)</li>
-                </ul>
-                <p className="mt-3 text-[#C9A96E] font-medium">
-                  Our team arrives fully equipped to transform your space into a premium spa sanctuary.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-2" className="bg-white border border-[#2C2C2C]/10 px-6 rounded-none">
-              <AccordionTrigger className="text-left hover:no-underline py-6">
-                <span className="text-[#2C2C2C] font-medium text-base">
-                  Do I need to complete an intake form?
-                </span>
-              </AccordionTrigger>
-              <AccordionContent className="text-[#2C2C2C]/70 text-sm pb-6 leading-relaxed">
-                <p className="mb-3">
-                  Yes, all clients must complete our digital intake form (sent via email/SMS upon booking).
-                  This 2-minute form helps us customize your experience, note preferences, and ensure your safety.
-                </p>
-                <p className="text-[#2C2C2C] font-semibold">We cannot begin service without it.</p>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-3" className="bg-white border border-[#2C2C2C]/10 px-6 rounded-none">
-              <AccordionTrigger className="text-left hover:no-underline py-6">
-                <span className="text-[#2C2C2C] font-medium text-base">
-                  How far in advance should I book?
-                </span>
-              </AccordionTrigger>
-              <AccordionContent className="text-[#2C2C2C]/70 text-sm pb-6 leading-relaxed">
-                <p>
-                  We recommend <span className="font-semibold text-[#2C2C2C]">48+ hours</span> for optimal availability,
-                  though same-day bookings may be available for VIP clients. Book via TidyCal below.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-4" className="bg-white border border-[#2C2C2C]/10 px-6 rounded-none">
-              <AccordionTrigger className="text-left hover:no-underline py-6">
-                <span className="text-[#2C2C2C] font-medium text-base">
-                  What is your cancellation policy?
-                </span>
-              </AccordionTrigger>
-              <AccordionContent className="text-[#2C2C2C]/70 text-sm pb-6 leading-relaxed">
-                <ul className="space-y-2 mb-3">
-                  <li><span className="font-semibold text-[#2C2C2C]">24-hour notice required</span></li>
-                  <li>Less than 24 hours: full service fee charged</li>
-                  <li>No-shows: full fee + travel surcharge</li>
-                </ul>
-                <p className="text-[#2C2C2C]/60 italic">
-                  We understand life happens—contact us early to reschedule.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-5" className="bg-white border border-[#2C2C2C]/10 px-6 rounded-none">
-              <AccordionTrigger className="text-left hover:no-underline py-6">
-                <span className="text-[#2C2C2C] font-medium text-base">
-                  Do you provide insurance receipts?
-                </span>
-              </AccordionTrigger>
-              <AccordionContent className="text-[#2C2C2C]/70 text-sm pb-6 leading-relaxed">
-                <p>
-                  Our services are luxury relaxation experiences by a medical aesthetician,
-                  not therapeutic treatments by an RMT. Receipts for insurance reimbursement are not provided.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
-      </section>
-
       {/* Section 1: Hero */}
       <section ref={heroRef} className="relative h-screen w-full overflow-hidden">
         <div className="hero-bg absolute inset-0">
@@ -879,7 +782,7 @@ function App() {
                 <CardContent>
                   <p className="text-[#2C2C2C] mb-4">Deep cleansing, gentle exfoliation, and hydration customized to your skin type. Includes steam, extractions, and a relaxing face massage.</p>
                   <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-[#2C2C2C]">$245</span>
+                    <span className="text-2xl font-bold text-[#2C2C2C]">$149</span>
                     <Button onClick={() => setShowBookingDialog(true)} className="bg-[#C9A96E] hover:bg-[#E8C4C4] text-[#2C2C2C]">Book Now</Button>
                   </div>
                 </CardContent>
@@ -1020,7 +923,7 @@ function App() {
                 <CardContent>
                   <p className="text-[#2C2C2C] mb-4">Full-face makeup for galas, parties, photoshoots, or any special event. Customized to your style.</p>
                   <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-[#2C2C2C]">$245</span>
+                    <span className="text-2xl font-bold text-[#2C2C2C]">$149</span>
                     <Button onClick={() => setShowBookingDialog(true)} className="bg-[#C9A96E] hover:bg-[#E8C4C4] text-[#2C2C2C]">Book Now</Button>
                   </div>
                 </CardContent>
