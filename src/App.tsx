@@ -26,6 +26,7 @@ function App() {
     return hash || 'home';
   });
   const [showBookingDialog, setShowBookingDialog] = useState(false);
+  const [showFAQDialog, setShowFAQDialog] = useState(false);
 
   const heroRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
@@ -253,13 +254,27 @@ function App() {
             <p className="hero-subtext text-white/90 text-lg md:text-xl mb-8 max-w-md drop-shadow">
               Professional facials, massage, makeup, nails, and hair—at home.
             </p>
-            <button 
+            <button
               onClick={() => setShowBookingDialog(true)}
               className="hero-cta inline-flex items-center gap-2 bg-[#C9A96E] text-[#2C2C2C] px-8 py-4 text-sm font-semibold uppercase tracking-wider hover:bg-[#E8C4C4] transition-all duration-300"
             >
               Book Your Appointment
               <ArrowRight size={16} />
             </button>
+            <div className="hero-cta flex items-center gap-4 mt-4">
+              <button
+                onClick={() => navigateToPage('contact')}
+                className="inline-flex items-center gap-2 border border-white/70 text-white px-6 py-3 text-sm font-semibold uppercase tracking-wider hover:border-[#C9A96E] hover:text-[#C9A96E] transition-all duration-300"
+              >
+                Contact
+              </button>
+              <button
+                onClick={() => setShowFAQDialog(true)}
+                className="inline-flex items-center gap-2 border border-white/70 text-white px-6 py-3 text-sm font-semibold uppercase tracking-wider hover:border-[#C9A96E] hover:text-[#C9A96E] transition-all duration-300"
+              >
+                FAQ
+              </button>
+            </div>
           </div>
         </div>
         
@@ -1678,6 +1693,95 @@ function App() {
     </Dialog>
   );
 
+  // FAQ Dialog
+  const renderFAQDialog = () => (
+    <Dialog open={showFAQDialog} onOpenChange={setShowFAQDialog}>
+      <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto bg-[#FAF6F0]">
+        <DialogHeader>
+          <DialogTitle className="heading-display text-[#2C2C2C] text-2xl md:text-3xl">
+            Frequently Asked Questions
+          </DialogTitle>
+        </DialogHeader>
+        <div className="mt-6">
+          <Accordion type="single" collapsible className="space-y-2">
+            <AccordionItem value="prepare" className="border border-[#C9A96E]/30 rounded-lg px-5 bg-white/60">
+              <AccordionTrigger className="text-[#2C2C2C] font-semibold text-left hover:text-[#C9A96E] hover:no-underline py-5">
+                What do I need to prepare for my mobile spa appointment?
+              </AccordionTrigger>
+              <AccordionContent className="text-[#2C2C2C]/80 text-sm leading-relaxed pb-5">
+                <p className="mb-3">To ensure a seamless, luxurious experience, please prepare:</p>
+                <ul className="space-y-1.5 mb-3">
+                  <li className="flex items-start gap-2"><span className="text-[#C9A96E] mt-0.5">•</span>A clear space of 8 ft x 6 ft (massage table, equipment setup)</li>
+                  <li className="flex items-start gap-2"><span className="text-[#C9A96E] mt-0.5">•</span>Access to one electrical outlet and a sink with hot water</li>
+                  <li className="flex items-start gap-2"><span className="text-[#C9A96E] mt-0.5">•</span>Two clean sheets/towels and one pillowcase</li>
+                  <li className="flex items-start gap-2"><span className="text-[#C9A96E] mt-0.5">•</span>Quiet environment (pets secured, children supervised)</li>
+                </ul>
+                <p>Our team arrives fully equipped to transform your space into a premium spa sanctuary.</p>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="intake" className="border border-[#C9A96E]/30 rounded-lg px-5 bg-white/60">
+              <AccordionTrigger className="text-[#2C2C2C] font-semibold text-left hover:text-[#C9A96E] hover:no-underline py-5">
+                Do I need to complete an intake form?
+              </AccordionTrigger>
+              <AccordionContent className="text-[#2C2C2C]/80 text-sm leading-relaxed pb-5">
+                Yes, all clients must complete our digital intake form (sent via email/SMS upon booking). This 2-minute form helps us customize your experience, note preferences, and ensure your safety. We cannot begin service without it.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="booking" className="border border-[#C9A96E]/30 rounded-lg px-5 bg-white/60">
+              <AccordionTrigger className="text-[#2C2C2C] font-semibold text-left hover:text-[#C9A96E] hover:no-underline py-5">
+                How far in advance should I book?
+              </AccordionTrigger>
+              <AccordionContent className="text-[#2C2C2C]/80 text-sm leading-relaxed pb-5">
+                We recommend 48+ hours for optimal availability, though same-day bookings may be available for VIP clients. Book via TidyCal below.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="cancellation" className="border border-[#C9A96E]/30 rounded-lg px-5 bg-white/60">
+              <AccordionTrigger className="text-[#2C2C2C] font-semibold text-left hover:text-[#C9A96E] hover:no-underline py-5">
+                What is your cancellation policy?
+              </AccordionTrigger>
+              <AccordionContent className="text-[#2C2C2C]/80 text-sm leading-relaxed pb-5">
+                <ul className="space-y-1.5 mb-3">
+                  <li className="flex items-start gap-2"><span className="text-[#C9A96E] mt-0.5">•</span>24-hour notice required</li>
+                  <li className="flex items-start gap-2"><span className="text-[#C9A96E] mt-0.5">•</span>Less than 24 hours: full service fee charged</li>
+                  <li className="flex items-start gap-2"><span className="text-[#C9A96E] mt-0.5">•</span>No-shows: full fee + travel surcharge</li>
+                </ul>
+                <p>We understand life happens—contact us early to reschedule.</p>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="insurance" className="border border-[#C9A96E]/30 rounded-lg px-5 bg-white/60">
+              <AccordionTrigger className="text-[#2C2C2C] font-semibold text-left hover:text-[#C9A96E] hover:no-underline py-5">
+                Do you provide insurance receipts?
+              </AccordionTrigger>
+              <AccordionContent className="text-[#2C2C2C]/80 text-sm leading-relaxed pb-5">
+                Our services are luxury relaxation experiences by a medical aesthetician, not therapeutic treatments by an RMT. Receipts for insurance reimbursement are not provided.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+
+          <div className="mt-8 pt-6 border-t border-[#C9A96E]/20 flex flex-col sm:flex-row gap-3">
+            <button
+              onClick={() => { setShowFAQDialog(false); setShowBookingDialog(true); }}
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-[#C9A96E] text-[#2C2C2C] px-6 py-3 text-sm font-semibold uppercase tracking-wider hover:bg-[#E8C4C4] transition-all duration-300"
+            >
+              Book Your Appointment
+              <ArrowRight size={16} />
+            </button>
+            <button
+              onClick={() => { setShowFAQDialog(false); navigateToPage('faq'); }}
+              className="flex-1 inline-flex items-center justify-center gap-2 border border-[#C9A96E] text-[#2C2C2C] px-6 py-3 text-sm font-semibold uppercase tracking-wider hover:bg-[#C9A96E]/10 transition-all duration-300"
+            >
+              View All FAQs
+            </button>
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+
   // Main render
   return (
     <div className="min-h-screen bg-[#FAF6F0]">
@@ -1713,6 +1817,9 @@ function App() {
       
       {/* Booking Dialog */}
       {renderBookingDialog()}
+
+      {/* FAQ Dialog */}
+      {renderFAQDialog()}
       
       {/* Floating CTA Button (Mobile) */}
       <button
