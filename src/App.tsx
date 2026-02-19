@@ -1713,7 +1713,7 @@ function App() {
                 <ul className="space-y-1.5 mb-3">
                   <li className="flex items-start gap-2"><span className="text-[#C9A96E] mt-0.5">•</span>A clear space of 8 ft x 6 ft (massage table, equipment setup)</li>
                   <li className="flex items-start gap-2"><span className="text-[#C9A96E] mt-0.5">•</span>Access to one electrical outlet and a sink with hot water</li>
-                  <li className="flex items-start gap-2"><span className="text-[#C9A96E] mt-0.5">•</span>Two clean sheets/towels and one pillowcase</li>
+                  
                   <li className="flex items-start gap-2"><span className="text-[#C9A96E] mt-0.5">•</span>Quiet environment (pets secured, children supervised)</li>
                 </ul>
                 <p>Our team arrives fully equipped to transform your space into a premium spa sanctuary.</p>
