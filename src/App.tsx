@@ -797,7 +797,7 @@ function App() {
                 <CardContent>
                   <p className="text-[#2C2C2C] mb-4">Deep cleansing, gentle exfoliation, and hydration customized to your skin type. Includes steam, extractions, and a relaxing face massage.</p>
                   <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-[#2C2C2C]">$149</span>
+                    <span className="text-2xl font-bold text-[#2C2C2C]">$245</span>
                     <Button onClick={() => setShowBookingDialog(true)} className="bg-[#C9A96E] hover:bg-[#E8C4C4] text-[#2C2C2C]">Book Now</Button>
                   </div>
                 </CardContent>
@@ -938,7 +938,7 @@ function App() {
                 <CardContent>
                   <p className="text-[#2C2C2C] mb-4">Full-face makeup for galas, parties, photoshoots, or any special event. Customized to your style.</p>
                   <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-[#2C2C2C]">$149</span>
+                    <span className="text-2xl font-bold text-[#2C2C2C]">$245</span>
                     <Button onClick={() => setShowBookingDialog(true)} className="bg-[#C9A96E] hover:bg-[#E8C4C4] text-[#2C2C2C]">Book Now</Button>
                   </div>
                 </CardContent>
