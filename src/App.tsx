@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
   Menu, X, Phone, Calendar, Gift, Users, Star,
   ChevronRight, Instagram, Facebook, Mail, MapPin,
-  Clock, Check, ArrowRight, Sparkles, Heart
+  Clock, Check, ArrowRight, Sparkles, Heart, ExternalLink
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
@@ -1524,20 +1524,34 @@ function App() {
   // Booking Dialog
   const renderBookingDialog = () => (
     <Dialog open={showBookingDialog} onOpenChange={setShowBookingDialog}>
-      <DialogContent className="max-w-4xl w-full max-h-[92vh] overflow-y-auto p-0">
-        <DialogHeader className="px-6 pt-6 pb-2">
+      <DialogContent className="max-w-md w-full">
+        <DialogHeader className="pb-2">
           <DialogTitle className="heading-display text-2xl text-[#2C2C2C]">Book Your Appointment</DialogTitle>
         </DialogHeader>
-        <div className="px-4 pb-6">
-          <iframe
-            src="https://tidycal.com/thegoodspa"
-            title="Book an appointment with The Good Spa"
-            width="100%"
-            height="700"
-            frameBorder="0"
-            className="w-full rounded-sm"
-            loading="lazy"
-          />
+        <div className="flex flex-col items-center gap-6 py-6 text-center">
+          <div className="w-16 h-16 rounded-full bg-[#FAF6F0] border border-[#C9A96E]/40 flex items-center justify-center">
+            <Calendar size={28} className="text-[#C9A96E]" />
+          </div>
+          <div>
+            <p className="text-[#2C2C2C] text-base mb-1">Ready to treat yourself?</p>
+            <p className="text-[#2C2C2C]/60 text-sm">Our booking calendar will open in a new tab so you can choose your service, date, and time.</p>
+          </div>
+          <a
+            href="https://tidycal.com/thegoodspa"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-[#C9A96E] hover:bg-[#b8914f] text-white px-8 py-3 text-sm font-semibold uppercase tracking-wider transition-colors rounded-sm w-full justify-center"
+            onClick={() => setShowBookingDialog(false)}
+          >
+            Open Booking Calendar
+            <ExternalLink size={15} />
+          </a>
+          <button
+            onClick={() => setShowBookingDialog(false)}
+            className="text-[#2C2C2C]/40 text-sm hover:text-[#2C2C2C] transition-colors"
+          >
+            Maybe later
+          </button>
         </div>
       </DialogContent>
     </Dialog>
