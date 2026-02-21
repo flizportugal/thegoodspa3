@@ -120,12 +120,13 @@ function App() {
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-5 flex justify-between items-center bg-gradient-to-b from-[#FAF6F0]/95 to-[#FAF6F0]/70 backdrop-blur-sm">
         <button
           onClick={() => navigateToPage('home')}
-          className="flex items-center hover:opacity-80 transition-opacity"
+          className="group relative flex items-center"
         >
+          <span className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(212,175,55,0.18)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           <img
             src="/images/magai-260219160221.jpeg"
             alt="The Good Spa"
-            className="h-10 w-auto object-contain"
+            className="h-10 w-auto object-contain transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:scale-110 drop-shadow-sm group-hover:drop-shadow-[0_8px_16px_rgba(212,175,55,0.3)]"
           />
         </button>
         
