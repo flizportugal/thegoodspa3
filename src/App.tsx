@@ -101,18 +101,6 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  useEffect(() => {
-    if (showBookingDialog) {
-      const script = document.createElement('script');
-      script.src = 'https://square.site/appointments/buyer/widget/f0sebupo4sg8x8/LTEQT2XP6NWZ1.js';
-      script.async = true;
-      document.body.appendChild(script);
-
-      return () => {
-        document.body.removeChild(script);
-      };
-    }
-  }, [showBookingDialog]);
 
   const renderNavigation = () => (
     <>
@@ -1536,12 +1524,20 @@ function App() {
   // Booking Dialog
   const renderBookingDialog = () => (
     <Dialog open={showBookingDialog} onOpenChange={setShowBookingDialog}>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-        <DialogHeader>
-          <DialogTitle className="heading-display text-2xl">Book Your Appointment</DialogTitle>
+      <DialogContent className="max-w-4xl w-full max-h-[92vh] overflow-y-auto p-0">
+        <DialogHeader className="px-6 pt-6 pb-2">
+          <DialogTitle className="heading-display text-2xl text-[#2C2C2C]">Book Your Appointment</DialogTitle>
         </DialogHeader>
-        <div className="mt-4 min-h-[600px]">
-          <div id="square-appointments-widget"></div>
+        <div className="px-4 pb-6">
+          <iframe
+            src="https://tidycal.com/thegoodspa"
+            title="Book an appointment with The Good Spa"
+            width="100%"
+            height="700"
+            frameBorder="0"
+            className="w-full rounded-sm"
+            loading="lazy"
+          />
         </div>
       </DialogContent>
     </Dialog>
