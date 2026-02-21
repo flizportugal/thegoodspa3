@@ -48,12 +48,6 @@ module.exports = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        charcoal: "#2C2C2C",
-        gold: "#C9A96E",
-        ivory: "#FAF6F0",
-        sage: "#B5C4B1",
-        blush: "#E8C4C4",
-        matteblack: "#1A1A1A",
       },
       borderRadius: {
         xl: "calc(var(--radius) + 4px)",
