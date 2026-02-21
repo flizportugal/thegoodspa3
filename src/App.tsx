@@ -14,7 +14,7 @@ import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import AdminBookings from '@/components/AdminBookings';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -783,250 +783,104 @@ function App() {
           </TabsList>
 
           <TabsContent value="facials" className="animate-section">
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="bg-[#FAF6F0] border border-[#C9A96E] shadow-sm">
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle className="text-xl mb-2">The Signature Facial</CardTitle>
-                      <CardDescription>Our most popular treatment</CardDescription>
-                    </div>
-                    <Badge className="bg-[#C9A96E]">60 min</Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-[#2C2C2C] mb-4">Deep cleansing, gentle exfoliation, and hydration customized to your skin type. Includes steam, extractions, and a relaxing face massage.</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-[#2C2C2C]">$245</span>
-                    <Button onClick={() => setShowBookingDialog(true)} className="bg-[#C9A96E] hover:bg-[#E8C4C4] text-[#2C2C2C]">Book Now</Button>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-[#FAF6F0] border border-[#C9A96E] shadow-sm">
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle className="text-xl mb-2">Anti-Aging Facial</CardTitle>
-                      <CardDescription>Turn back time</CardDescription>
-                    </div>
-                    <Badge className="bg-[#C9A96E]">75 min</Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-[#2C2C2C] mb-4">Advanced treatment with peptide serums, LED therapy, and collagen-boosting massage to reduce fine lines and restore youthful glow.</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-[#2C2C2C]">$199</span>
-                    <Button onClick={() => setShowBookingDialog(true)} className="bg-[#C9A96E] hover:bg-[#E8C4C4] text-[#2C2C2C]">Book Now</Button>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-[#FAF6F0] border border-[#C9A96E] shadow-sm">
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle className="text-xl mb-2">Acne Treatment Facial</CardTitle>
-                      <CardDescription>Clear, calm skin</CardDescription>
-                    </div>
-                    <Badge className="bg-[#C9A96E]">60 min</Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-[#2C2C2C] mb-4">Deep pore cleansing with salicylic acid treatment, high-frequency therapy, and calming mask to reduce inflammation and prevent breakouts.</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-[#2C2C2C]">$159</span>
-                    <Button onClick={() => setShowBookingDialog(true)} className="bg-[#C9A96E] hover:bg-[#E8C4C4] text-[#2C2C2C]">Book Now</Button>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-[#FAF6F0] border border-[#C9A96E] shadow-sm">
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle className="text-xl mb-2">HydraGlow Facial</CardTitle>
-                      <CardDescription>Ultimate hydration</CardDescription>
-                    </div>
-                    <Badge className="bg-[#C9A96E]">75 min</Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-[#2C2C2C] mb-4">Oxygen infusion with hyaluronic acid serums for plump, dewy skin. Perfect before special events or for severely dehydrated skin.</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-[#2C2C2C]">$229</span>
-                    <Button onClick={() => setShowBookingDialog(true)} className="bg-[#C9A96E] hover:bg-[#E8C4C4] text-[#2C2C2C]">Book Now</Button>
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                { title: "The Signature Facial", sub: "Our most popular treatment", duration: "60 min", price: "$245", desc: "Deep cleansing, gentle exfoliation, and hydration customized to your skin type. Includes steam, extractions, and a relaxing face massage.", btn: "Book Now" },
+                { title: "Anti-Aging Facial", sub: "Turn back time", duration: "75 min", price: "$199", desc: "Advanced treatment with peptide serums, LED therapy, and collagen-boosting massage to reduce fine lines and restore youthful glow.", btn: "Book Now" },
+                { title: "Acne Treatment Facial", sub: "Clear, calm skin", duration: "60 min", price: "$159", desc: "Deep pore cleansing with salicylic acid treatment, high-frequency therapy, and calming mask to reduce inflammation and prevent breakouts.", btn: "Book Now" },
+                { title: "HydraGlow Facial", sub: "Ultimate hydration", duration: "75 min", price: "$229", desc: "Oxygen infusion with hyaluronic acid serums for plump, dewy skin. Perfect before special events or for severely dehydrated skin.", btn: "Book Now" },
+              ].map((svc, i) => (
+                <div
+                  key={svc.title}
+                  className="bg-white rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.08)] p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(201,169,110,0.15)]"
+                  style={{ borderLeft: `3px solid ${i % 2 === 0 ? '#B5C4B1' : '#C9A96E'}` }}
+                >
+                  <h3 className="font-['Playfair_Display',serif] text-[#2C2C2C] text-xl mb-1">{svc.title}</h3>
+                  <p className="text-[#C9A96E] text-sm font-semibold tracking-wide mb-3">{svc.duration} &nbsp;|&nbsp; {svc.price}</p>
+                  <p className="text-[#2C2C2C] text-sm leading-relaxed mb-5">{svc.desc}</p>
+                  <Button onClick={() => setShowBookingDialog(true)} className="bg-[#C9A96E] hover:bg-[#b8914f] text-white text-sm">{svc.btn}</Button>
+                </div>
+              ))}
             </div>
           </TabsContent>
 
           <TabsContent value="massage" className="animate-section">
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="bg-[#FAF6F0] border border-[#C9A96E] shadow-sm">
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle className="text-xl mb-2">wellness Massage</CardTitle>
-                      <CardDescription>Targeted relief</CardDescription>
-                    </div>
-                    <Badge className="bg-[#C9A96E]">60-90 min</Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-[#2C2C2C] mb-4">Firm pressure to release chronic muscle tension. Focus on neck, back, shoulders, and any problem areas.</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-[#2C2C2C]">$139 - $189</span>
-                    <Button onClick={() => setShowBookingDialog(true)} className="bg-[#C9A96E] hover:bg-[#E8C4C4] text-[#2C2C2C]">Book Now</Button>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-[#FAF6F0] border border-[#C9A96E] shadow-sm">
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle className="text-xl mb-2">Swedish Relaxation</CardTitle>
-                      <CardDescription>Total relaxation</CardDescription>
-                    </div>
-                    <Badge className="bg-[#C9A96E]">60-90 min</Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-[#2C2C2C] mb-4">Long, flowing strokes to promote relaxation, improve circulation, and reduce stress. Aromatherapy included.</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-[#2C2C2C]">$119 - $169</span>
-                    <Button onClick={() => setShowBookingDialog(true)} className="bg-[#C9A96E] hover:bg-[#E8C4C4] text-[#2C2C2C]">Book Now</Button>
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                { title: "Wellness Massage", sub: "Targeted relief", duration: "60–90 min", price: "$139–$189", desc: "Firm pressure to release chronic muscle tension. Focus on neck, back, shoulders, and any problem areas.", btn: "Book Now" },
+                { title: "Swedish Relaxation", sub: "Total relaxation", duration: "60–90 min", price: "$119–$169", desc: "Long, flowing strokes to promote relaxation, improve circulation, and reduce stress. Aromatherapy included.", btn: "Book Now" },
+              ].map((svc, i) => (
+                <div
+                  key={svc.title}
+                  className="bg-white rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.08)] p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(201,169,110,0.15)]"
+                  style={{ borderLeft: `3px solid ${i % 2 === 0 ? '#B5C4B1' : '#C9A96E'}` }}
+                >
+                  <h3 className="font-['Playfair_Display',serif] text-[#2C2C2C] text-xl mb-1">{svc.title}</h3>
+                  <p className="text-[#C9A96E] text-sm font-semibold tracking-wide mb-3">{svc.duration} &nbsp;|&nbsp; {svc.price}</p>
+                  <p className="text-[#2C2C2C] text-sm leading-relaxed mb-5">{svc.desc}</p>
+                  <Button onClick={() => setShowBookingDialog(true)} className="bg-[#C9A96E] hover:bg-[#b8914f] text-white text-sm">{svc.btn}</Button>
+                </div>
+              ))}
             </div>
           </TabsContent>
 
           <TabsContent value="makeup" className="animate-section">
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="bg-[#FAF6F0] border border-[#C9A96E] shadow-sm">
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle className="text-xl mb-2">Bridal Makeup</CardTitle>
-                      <CardDescription>Your perfect day</CardDescription>
-                    </div>
-                    <Badge className="bg-[#C9A96E]">90 min</Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-[#2C2C2C] mb-4">Flawless, long-lasting makeup for your wedding day. Includes trial session and day-of touch-up kit.</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-[#2C2C2C]">$299</span>
-                    <Button onClick={() => setShowBookingDialog(true)} className="bg-[#C9A96E] hover:bg-[#E8C4C4] text-[#2C2C2C]">Book Now</Button>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-[#FAF6F0] border border-[#C9A96E] shadow-sm">
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle className="text-xl mb-2">Event Makeup</CardTitle>
-                      <CardDescription>Glam for any occasion</CardDescription>
-                    </div>
-                    <Badge className="bg-[#C9A96E]">60 min</Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-[#2C2C2C] mb-4">Full-face makeup for galas, parties, photoshoots, or any special event. Customized to your style.</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-[#2C2C2C]">$245</span>
-                    <Button onClick={() => setShowBookingDialog(true)} className="bg-[#C9A96E] hover:bg-[#E8C4C4] text-[#2C2C2C]">Book Now</Button>
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                { title: "Bridal Makeup", sub: "Your perfect day", duration: "90 min", price: "$299", desc: "Flawless, long-lasting makeup for your wedding day. Includes trial session and day-of touch-up kit.", btn: "Book Now" },
+                { title: "Event Makeup", sub: "Glam for any occasion", duration: "60 min", price: "$245", desc: "Full-face makeup for galas, parties, photoshoots, or any special event. Customized to your style.", btn: "Book Now" },
+              ].map((svc, i) => (
+                <div
+                  key={svc.title}
+                  className="bg-white rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.08)] p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(201,169,110,0.15)]"
+                  style={{ borderLeft: `3px solid ${i % 2 === 0 ? '#B5C4B1' : '#C9A96E'}` }}
+                >
+                  <h3 className="font-['Playfair_Display',serif] text-[#2C2C2C] text-xl mb-1">{svc.title}</h3>
+                  <p className="text-[#C9A96E] text-sm font-semibold tracking-wide mb-3">{svc.duration} &nbsp;|&nbsp; {svc.price}</p>
+                  <p className="text-[#2C2C2C] text-sm leading-relaxed mb-5">{svc.desc}</p>
+                  <Button onClick={() => setShowBookingDialog(true)} className="bg-[#C9A96E] hover:bg-[#b8914f] text-white text-sm">{svc.btn}</Button>
+                </div>
+              ))}
             </div>
           </TabsContent>
 
           <TabsContent value="nails" className="animate-section">
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="bg-[#FAF6F0] border border-[#C9A96E] shadow-sm">
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle className="text-xl mb-2">Luxury Manicure</CardTitle>
-                      <CardDescription>Perfect hands</CardDescription>
-                    </div>
-                    <Badge className="bg-[#C9A96E]">45 min</Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-[#2C2C2C] mb-4">Cuticle care, shaping, hand massage, and long-lasting polish or gel. Includes nourishing hand mask.</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-[#2C2C2C]">$59</span>
-                    <Button onClick={() => setShowBookingDialog(true)} className="bg-[#C9A96E] hover:bg-[#E8C4C4] text-[#2C2C2C]">Book Now</Button>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-[#FAF6F0] border border-[#C9A96E] shadow-sm">
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle className="text-xl mb-2">Spa Pedicure</CardTitle>
-                      <CardDescription>Pampered feet</CardDescription>
-                    </div>
-                    <Badge className="bg-[#C9A96E]">60 min</Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-[#2C2C2C] mb-4">Exfoliating scrub, callus treatment, foot massage, and polish. Includes hot towel wrap and moisturizing mask.</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-[#2C2C2C]">$79</span>
-                    <Button onClick={() => setShowBookingDialog(true)} className="bg-[#C9A96E] hover:bg-[#E8C4C4] text-[#2C2C2C]">Book Now</Button>
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                { title: "Luxury Manicure", sub: "Perfect hands", duration: "45 min", price: "$59", desc: "Cuticle care, shaping, hand massage, and long-lasting polish or gel. Includes nourishing hand mask.", btn: "Book Now" },
+                { title: "Spa Pedicure", sub: "Pampered feet", duration: "60 min", price: "$79", desc: "Exfoliating scrub, callus treatment, foot massage, and polish. Includes hot towel wrap and moisturizing mask.", btn: "Book Now" },
+              ].map((svc, i) => (
+                <div
+                  key={svc.title}
+                  className="bg-white rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.08)] p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(201,169,110,0.15)]"
+                  style={{ borderLeft: `3px solid ${i % 2 === 0 ? '#B5C4B1' : '#C9A96E'}` }}
+                >
+                  <h3 className="font-['Playfair_Display',serif] text-[#2C2C2C] text-xl mb-1">{svc.title}</h3>
+                  <p className="text-[#C9A96E] text-sm font-semibold tracking-wide mb-3">{svc.duration} &nbsp;|&nbsp; {svc.price}</p>
+                  <p className="text-[#2C2C2C] text-sm leading-relaxed mb-5">{svc.desc}</p>
+                  <Button onClick={() => setShowBookingDialog(true)} className="bg-[#C9A96E] hover:bg-[#b8914f] text-white text-sm">{svc.btn}</Button>
+                </div>
+              ))}
             </div>
           </TabsContent>
 
           <TabsContent value="hair" className="animate-section">
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="bg-[#FAF6F0] border border-[#C9A96E] shadow-sm">
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle className="text-xl mb-2">Hair Extensions</CardTitle>
-                      <CardDescription>Length & volume</CardDescription>
-                    </div>
-                    <Badge className="bg-[#C9A96E]">Consult Required</Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-[#2C2C2C] mb-4">Premium tape-in or keratin bond extensions for seamless, natural-looking length and volume. Consultation required.</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-[#2C2C2C]">From $399</span>
-                    <Button onClick={() => setShowBookingDialog(true)} className="bg-[#C9A96E] hover:bg-[#E8C4C4] text-[#2C2C2C]">Book Consult</Button>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-[#FAF6F0] border border-[#C9A96E] shadow-sm">
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle className="text-xl mb-2">Blowout & Styling</CardTitle>
-                      <CardDescription>Salon-perfect hair</CardDescription>
-                    </div>
-                    <Badge className="bg-[#C9A96E]">45 min</Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-[#2C2C2C] mb-4">Professional wash, blow-dry, and styling. Choose from sleek and smooth, voluminous waves, or bouncy curls.</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-[#2C2C2C]">$69</span>
-                    <Button onClick={() => setShowBookingDialog(true)} className="bg-[#C9A96E] hover:bg-[#E8C4C4] text-[#2C2C2C]">Book Now</Button>
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                { title: "Hair Extensions", sub: "Length & volume", duration: "Consult Required", price: "From $399", desc: "Premium tape-in or keratin bond extensions for seamless, natural-looking length and volume. Consultation required.", btn: "Book Consult" },
+                { title: "Blowout & Styling", sub: "Salon-perfect hair", duration: "45 min", price: "$69", desc: "Professional wash, blow-dry, and styling. Choose from sleek and smooth, voluminous waves, or bouncy curls.", btn: "Book Now" },
+              ].map((svc, i) => (
+                <div
+                  key={svc.title}
+                  className="bg-white rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.08)] p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(201,169,110,0.15)]"
+                  style={{ borderLeft: `3px solid ${i % 2 === 0 ? '#B5C4B1' : '#C9A96E'}` }}
+                >
+                  <h3 className="font-['Playfair_Display',serif] text-[#2C2C2C] text-xl mb-1">{svc.title}</h3>
+                  <p className="text-[#C9A96E] text-sm font-semibold tracking-wide mb-3">{svc.duration} &nbsp;|&nbsp; {svc.price}</p>
+                  <p className="text-[#2C2C2C] text-sm leading-relaxed mb-5">{svc.desc}</p>
+                  <Button onClick={() => setShowBookingDialog(true)} className="bg-[#C9A96E] hover:bg-[#b8914f] text-white text-sm">{svc.btn}</Button>
+                </div>
+              ))}
             </div>
           </TabsContent>
         </Tabs>
