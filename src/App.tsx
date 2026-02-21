@@ -118,15 +118,11 @@ function App() {
     <>
       {/* Fixed Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-5 flex justify-between items-center bg-gradient-to-b from-[#FAF6F0]/95 to-[#FAF6F0]/70 backdrop-blur-sm">
-        <button
-          onClick={() => navigateToPage('home')}
-          className="flex items-center hover:opacity-80 transition-opacity"
+        <button 
+          onClick={() => navigateToPage('home')} 
+          className="text-micro text-[#2C2C2C] hover:text-[#C9A96E] transition-colors"
         >
-          <img
-            src="/images/magai-260219160221.jpeg"
-            alt="The Good Spa"
-            className="h-10 w-auto object-contain"
-          />
+          The Good Spa
         </button>
         
         <div className="hidden md:flex items-center gap-8">
@@ -157,9 +153,7 @@ function App() {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="fixed inset-0 z-40 bg-[#FAF6F0] flex flex-col items-center justify-center gap-8">
-          <button onClick={() => navigateToPage('home')} className="mb-2 hover:opacity-80 transition-opacity">
-            <img src="/images/magai-260219160221.jpeg" alt="The Good Spa" className="h-14 w-auto object-contain" />
-          </button>
+          <button onClick={() => navigateToPage('home')} className="text-2xl font-semibold text-[#2C2C2C] hover:text-[#C9A96E]">Home</button>
           <button onClick={() => navigateToPage('services')} className="text-2xl font-semibold text-[#2C2C2C] hover:text-[#C9A96E]">Services</button>
           <button onClick={() => navigateToPage('portfolio')} className="text-2xl font-semibold text-[#2C2C2C] hover:text-[#C9A96E]">Portfolio</button>
           <button onClick={() => navigateToPage('about')} className="text-2xl font-semibold text-[#2C2C2C] hover:text-[#C9A96E]">About</button>
@@ -208,7 +202,7 @@ function App() {
             <ul className="space-y-2">
               <li className="flex items-center gap-2 text-sm text-[#FAF6F0]/80">
                 <Phone size={14} />
-                <a href="tel:+16475474498" className="hover:text-[#C9A96E]">(647) 547-4498</a>
+                <a href="tel:+14165551234" className="hover:text-[#C9A96E]">(416) 555-1234</a>
               </li>
               <li className="flex items-center gap-2 text-sm text-[#FAF6F0]/80">
                 <Mail size={14} />
@@ -733,7 +727,7 @@ function App() {
                 <div>
                   <Label className="text-micro text-[#FAF6F0]/60 mb-2 block">Phone</Label>
                   <Input
-                    placeholder="(647) 547-4498"
+                    placeholder="(416) 555-1234"
                     className="bg-[#FAF6F0]/10 border-[#FAF6F0]/20 text-[#FAF6F0] placeholder:text-[#FAF6F0]/40"
                   />
                 </div>
@@ -803,7 +797,7 @@ function App() {
                 <CardContent>
                   <p className="text-[#2C2C2C] mb-4">Deep cleansing, gentle exfoliation, and hydration customized to your skin type. Includes steam, extractions, and a relaxing face massage.</p>
                   <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-[#2C2C2C]">$245</span>
+                    <span className="text-2xl font-bold text-[#2C2C2C]">$149</span>
                     <Button onClick={() => setShowBookingDialog(true)} className="bg-[#C9A96E] hover:bg-[#E8C4C4] text-[#2C2C2C]">Book Now</Button>
                   </div>
                 </CardContent>
@@ -944,7 +938,7 @@ function App() {
                 <CardContent>
                   <p className="text-[#2C2C2C] mb-4">Full-face makeup for galas, parties, photoshoots, or any special event. Customized to your style.</p>
                   <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-[#2C2C2C]">$245</span>
+                    <span className="text-2xl font-bold text-[#2C2C2C]">$149</span>
                     <Button onClick={() => setShowBookingDialog(true)} className="bg-[#C9A96E] hover:bg-[#E8C4C4] text-[#2C2C2C]">Book Now</Button>
                   </div>
                 </CardContent>
@@ -1498,7 +1492,7 @@ function App() {
           <AccordionItem value="item-7" className="bg-[#FAF6F0] mb-4 rounded-lg px-6">
             <AccordionTrigger className="text-[#2C2C2C] font-semibold">How do I book an appointment?</AccordionTrigger>
             <AccordionContent className="text-[#2C2C2C]">
-              You can book online through our website, call us at (647) 547-4498, or email hello@thegoodspa.ca. We typically confirm bookings within 2 hours during business hours.
+              You can book online through our website, call us at (416) 555-1234, or email hello@thegoodspa.ca. We typically confirm bookings within 2 hours during business hours.
             </AccordionContent>
           </AccordionItem>
         </Accordion>
@@ -1525,7 +1519,7 @@ function App() {
                 </div>
                 <div>
                   <p className="text-micro text-[#2C2C2C]">Phone</p>
-                  <a href="tel:+16475474498" className="text-[#2C2C2C] font-medium hover:text-[#C9A96E]">(647) 547-4498</a>
+                  <a href="tel:+14165551234" className="text-[#2C2C2C] font-medium hover:text-[#C9A96E]">(416) 555-1234</a>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -1719,7 +1713,7 @@ function App() {
                 <ul className="space-y-1.5 mb-3">
                   <li className="flex items-start gap-2"><span className="text-[#C9A96E] mt-0.5">•</span>A clear space of 8 ft x 6 ft (massage table, equipment setup)</li>
                   <li className="flex items-start gap-2"><span className="text-[#C9A96E] mt-0.5">•</span>Access to one electrical outlet and a sink with hot water</li>
-                  
+                  <li className="flex items-start gap-2"><span className="text-[#C9A96E] mt-0.5">•</span>Two clean sheets/towels and one pillowcase</li>
                   <li className="flex items-start gap-2"><span className="text-[#C9A96E] mt-0.5">•</span>Quiet environment (pets secured, children supervised)</li>
                 </ul>
                 <p>Our team arrives fully equipped to transform your space into a premium spa sanctuary.</p>
