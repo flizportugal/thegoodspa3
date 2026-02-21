@@ -118,11 +118,15 @@ function App() {
     <>
       {/* Fixed Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-5 flex justify-between items-center bg-gradient-to-b from-[#FAF6F0]/95 to-[#FAF6F0]/70 backdrop-blur-sm">
-        <button 
-          onClick={() => navigateToPage('home')} 
-          className="text-micro text-[#2C2C2C] hover:text-[#C9A96E] transition-colors"
+        <button
+          onClick={() => navigateToPage('home')}
+          className="flex items-center hover:opacity-80 transition-opacity"
         >
-          The Good Spa
+          <img
+            src="/images/magai-260219160221.jpeg"
+            alt="The Good Spa"
+            className="h-10 w-auto object-contain"
+          />
         </button>
         
         <div className="hidden md:flex items-center gap-8">
@@ -153,7 +157,9 @@ function App() {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="fixed inset-0 z-40 bg-[#FAF6F0] flex flex-col items-center justify-center gap-8">
-          <button onClick={() => navigateToPage('home')} className="text-2xl font-semibold text-[#2C2C2C] hover:text-[#C9A96E]">Home</button>
+          <button onClick={() => navigateToPage('home')} className="mb-2 hover:opacity-80 transition-opacity">
+            <img src="/images/magai-260219160221.jpeg" alt="The Good Spa" className="h-14 w-auto object-contain" />
+          </button>
           <button onClick={() => navigateToPage('services')} className="text-2xl font-semibold text-[#2C2C2C] hover:text-[#C9A96E]">Services</button>
           <button onClick={() => navigateToPage('portfolio')} className="text-2xl font-semibold text-[#2C2C2C] hover:text-[#C9A96E]">Portfolio</button>
           <button onClick={() => navigateToPage('about')} className="text-2xl font-semibold text-[#2C2C2C] hover:text-[#C9A96E]">About</button>
