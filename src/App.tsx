@@ -235,8 +235,8 @@ function App() {
         <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-[4vw]">
           <div className="md:ml-auto md:w-[40vw] md:mr-[4vw]">
             <h1 className="hero-headline heading-display text-white text-[clamp(36px,5vw,72px)] mb-6 drop-shadow-lg">
-              <span className="block">Luxury Spa</span>
-              <span className="block">Experiences</span>
+              <span className="block">The Good </span>
+              <span className="block">Life</span>
               <span className="block">Delivered</span>
             </h1>
             <p className="hero-subtext text-white/90 text-lg md:text-xl mb-8 max-w-md drop-shadow">
