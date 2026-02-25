@@ -162,7 +162,7 @@ function App() {
           <div>
             <h4 className="text-micro text-[#FAF6F0]/60 mb-4">The Good Spa</h4>
             <p className="text-sm text-[#FAF6F0]/80 leading-relaxed">
-              Luxury spa experiences delivered to your door. Professional facials, massage, makeup, nails, and hair—at home.
+              The Good Life, Delivered. Professional facials, massage, makeup, nails, and hair—at home.
             </p>
           </div>
           <div>
@@ -226,7 +226,7 @@ function App() {
         <div className="hero-bg absolute inset-0">
           <img 
             src="/images/hero_robe.jpg" 
-            alt="Luxury spa experience" 
+            alt="The Good Life, Delivered." 
             className="w-full h-full object-cover"
           />
           <div className="vignette-overlay absolute inset-0" />
