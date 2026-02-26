@@ -724,7 +724,7 @@ function App() {
   );
 
   const renderServicesPage = () => (
-    <div className="min-h-screen pt-24 pb-16 px-6" style={{ backgroundImage: 'url(/images/392bf5b9e697a7101e501c8136d94f28.jpeg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
+    <div className="min-h-screen pt-24 pb-16 px-6" style={{ backgroundImage: 'url(/images/hf_20260226_065802_50c19ea7-cc77-42dd-941d-bfc061d28fff.jpeg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-section">
           <h1 className="heading-display text-[#2C2C2C] text-[clamp(36px,5vw,64px)] mb-4">
