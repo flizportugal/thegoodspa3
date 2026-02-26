@@ -712,7 +712,7 @@ function App() {
 
             <div className="animate-section hidden md:block">
               <img
-                src="/images/contact_close.jpg"
+                src="/images/hf_20260226_144827_870fa72e-3dc8-41d5-bfe9-b5b5f0cc874e.jpeg"
                 alt="Contact"
                 className="w-full h-[600px] object-cover rounded-lg"
               />
