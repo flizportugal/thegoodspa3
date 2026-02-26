@@ -335,7 +335,7 @@ function App() {
       <section className="relative h-screen w-full overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/massage_shoulders.jpg"
+            src="/images/hf_20260226_063043_9da9ef9d-4e15-4bd4-9a66-bf32a573e507.jpeg"
             alt="Wellness massage"
             className="w-full h-full object-cover"
           />
