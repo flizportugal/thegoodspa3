@@ -1160,7 +1160,7 @@ function App() {
             </div>
             <div>
               <img
-                src="/images/hf_20260226_151851_f95db854-af34-458d-97c7-c32b1c7b8ed3.jpeg"
+                src="/images/hey.jpeg"
                 alt="Gift card"
                 className="w-full h-[400px] object-cover rounded-lg"
               />
