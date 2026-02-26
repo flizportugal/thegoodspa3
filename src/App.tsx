@@ -485,7 +485,7 @@ function App() {
       <section ref={membershipRef} className="relative h-screen w-full overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/membership_smile.jpg"
+            src="/images/hf_20260226_140724_96d76e2b-ce63-46cb-984d-73c3f6c4f68f.jpeg"
             alt="Glow Club Membership"
             className="w-full h-full object-cover"
           />
