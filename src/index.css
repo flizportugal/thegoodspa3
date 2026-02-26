@@ -36,6 +36,14 @@
     --spa-light-gray: #B7B7B7;
     --spa-blush: #F5E6E0;
     --spa-sage: #9CAF94;
+
+    /* Atmosphere palette */
+    --color-atmosphere-mist: #F2EDE6;
+    --color-atmosphere-pearl: #DDD3C5;
+    --color-atmosphere-sand: #C4B49E;
+    --color-atmosphere-mocha: #9E8C7A;
+    --color-atmosphere-drift: #7A6858;
+    --color-atmosphere-espresso: #5C4B3C;
   }
 }
 
