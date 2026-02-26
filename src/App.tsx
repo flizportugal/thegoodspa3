@@ -432,7 +432,7 @@ function App() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="animate-section">
               <img
-                src="/images/howitworks_robe.jpg"
+                src="/images/hf_20260226_003011_5b96aaf1-f35e-4b5c-870f-1472c09deef6.png"
                 alt="How it works"
                 className="w-full h-[600px] object-cover rounded-lg"
               />
