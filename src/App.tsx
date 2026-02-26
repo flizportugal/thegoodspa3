@@ -105,7 +105,7 @@ function App() {
   const renderNavigation = () => (
     <>
       {/* Fixed Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-5 flex justify-between items-center bg-gradient-to-b from-[#FAF6F0]/95 to-[#FAF6F0]/70 backdrop-blur-sm">
+      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-5 flex justify-between items-center">
         <button 
           onClick={() => navigateToPage('home')} 
           className="text-micro text-[#2C2C2C] hover:text-[#C9A96E] transition-colors"
@@ -225,7 +225,7 @@ function App() {
       <section ref={heroRef} className="relative h-screen w-full overflow-hidden">
         <div className="hero-bg absolute inset-0">
           <img 
-            src="/images/hf_20260225_232954_402b0aaa-87f2-4c41-b54f-edda938cf74d.jpeg"
+            src="/images/hf_20260226_003716_6ba797b3-f9df-41eb-8f4b-9323bccc7d40.jpeg"
             alt="The Good Life, Delivered."
             className="w-full h-full object-cover object-top scale-90 origin-top"
           />
