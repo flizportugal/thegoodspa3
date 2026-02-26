@@ -227,7 +227,7 @@ function App() {
           <img 
             src="/images/hf_20260225_232954_402b0aaa-87f2-4c41-b54f-edda938cf74d.jpeg"
             alt="The Good Life, Delivered."
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top scale-90 origin-top"
           />
           <div className="vignette-overlay absolute inset-0" />
         </div>
