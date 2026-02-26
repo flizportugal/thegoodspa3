@@ -270,7 +270,7 @@ function App() {
       <section ref={servicesRef} className="relative h-screen w-full overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/services_towel.jpg"
+            src="/images/hf_20260226_063549_ee96c15d-53e8-4c90-b7fa-94d7fffbf93e.jpeg"
             alt="Spa services"
             className="w-full h-full object-cover"
           />
