@@ -659,46 +659,46 @@ function App() {
       </section>
 
       {/* Section 12: Contact */}
-      <section ref={contactRef} className="text-[#2C2C2C] py-24 px-6 relative" style={{ backgroundImage: 'url(/images/0E566F28-36A4-4903-90F9-CD1579E4FB8A.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <section ref={contactRef} className="bg-[#2C2C2C] text-[#FAF6F0] py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="animate-section">
-              <h2 className="heading-display text-[#2C2C2C] text-[clamp(32px,4vw,48px)] mb-6">
+              <h2 className="heading-display text-[#FAF6F0] text-[clamp(32px,4vw,48px)] mb-6">
                 Ready When You Are.
               </h2>
-              <p className="text-[#2C2C2C]/70 text-lg mb-8">
+              <p className="text-[#FAF6F0]/70 text-lg mb-8">
                 Book online or send a note. We'll confirm within 2 hours.
               </p>
 
               <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <Label className="text-micro text-[#2C2C2C]/60 mb-2 block">Name</Label>
+                    <Label className="text-micro text-[#FAF6F0]/60 mb-2 block">Name</Label>
                     <Input
                       placeholder="Your name"
-                      className="bg-white/60 border-[#2C2C2C]/20 text-[#2C2C2C] placeholder:text-[#2C2C2C]/40"
+                      className="bg-[#FAF6F0]/10 border-[#FAF6F0]/20 text-[#FAF6F0] placeholder:text-[#FAF6F0]/40"
                     />
                   </div>
                   <div>
-                    <Label className="text-micro text-[#2C2C2C]/60 mb-2 block">Email</Label>
+                    <Label className="text-micro text-[#FAF6F0]/60 mb-2 block">Email</Label>
                     <Input
                       placeholder="your@email.com"
-                      className="bg-white/60 border-[#2C2C2C]/20 text-[#2C2C2C] placeholder:text-[#2C2C2C]/40"
+                      className="bg-[#FAF6F0]/10 border-[#FAF6F0]/20 text-[#FAF6F0] placeholder:text-[#FAF6F0]/40"
                     />
                   </div>
                 </div>
                 <div>
-                  <Label className="text-micro text-[#2C2C2C]/60 mb-2 block">Phone</Label>
+                  <Label className="text-micro text-[#FAF6F0]/60 mb-2 block">Phone</Label>
                   <Input
                     placeholder="(647) 547-4498"
-                    className="bg-white/60 border-[#2C2C2C]/20 text-[#2C2C2C] placeholder:text-[#2C2C2C]/40"
+                    className="bg-[#FAF6F0]/10 border-[#FAF6F0]/20 text-[#FAF6F0] placeholder:text-[#FAF6F0]/40"
                   />
                 </div>
                 <div>
-                  <Label className="text-micro text-[#2C2C2C]/60 mb-2 block">Message</Label>
+                  <Label className="text-micro text-[#FAF6F0]/60 mb-2 block">Message</Label>
                   <Textarea
                     placeholder="Tell us about your desired services..."
-                    className="bg-white/60 border-[#2C2C2C]/20 text-[#2C2C2C] placeholder:text-[#2C2C2C]/40 min-h-[120px]"
+                    className="bg-[#FAF6F0]/10 border-[#FAF6F0]/20 text-[#FAF6F0] placeholder:text-[#FAF6F0]/40 min-h-[120px]"
                   />
                 </div>
                 <Button
