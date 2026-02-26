@@ -105,7 +105,7 @@ function App() {
   const renderNavigation = () => (
     <>
       {/* Fixed Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-5 flex justify-between items-center bg-gradient-to-b from-[#FAF6F0]/95 to-[#FAF6F0]/70 backdrop-blur-sm">
+      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-5 flex justify-between items-center bg-[#FAF6F0]/95 backdrop-blur-sm">
         <button 
           onClick={() => navigateToPage('home')} 
           className="text-micro text-[#2C2C2C] hover:text-[#C9A96E] transition-colors"
