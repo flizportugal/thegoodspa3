@@ -105,30 +105,30 @@ function App() {
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-5 flex justify-between items-center">
         <button
           onClick={() => navigateToPage('home')}
-          className="text-micro text-[#2C2C2C] hover:text-[#C9A96E] transition-colors"
+          className="text-micro text-[#DDD3C5] hover:text-[#D9B061] transition-colors"
         >
           The Good Spa
         </button>
 
         <div className="hidden md:flex items-center gap-8">
-          <button onClick={() => navigateToPage('services')} className="text-sm text-[#2C2C2C] gold-underline hover:text-[#C9A96E] transition-colors">Services</button>
-          <button onClick={() => navigateToPage('portfolio')} className="text-sm text-[#2C2C2C] gold-underline hover:text-[#C9A96E] transition-colors">Portfolio</button>
-          <button onClick={() => navigateToPage('about')} className="text-sm text-[#2C2C2C] gold-underline hover:text-[#C9A96E] transition-colors">About</button>
-          <button onClick={() => navigateToPage('membership')} className="text-sm text-[#2C2C2C] gold-underline hover:text-[#C9A96E] transition-colors">Membership</button>
-          <button onClick={() => navigateToPage('blog')} className="text-sm text-[#2C2C2C] gold-underline hover:text-[#C9A96E] transition-colors">Blog</button>
-          <button onClick={() => navigateToPage('contact')} className="text-sm text-[#2C2C2C] gold-underline hover:text-[#C9A96E] transition-colors">Contact</button>
+          <button onClick={() => navigateToPage('services')} className="text-sm text-[#DDD3C5] gold-underline hover:text-[#D9B061] transition-colors">Services</button>
+          <button onClick={() => navigateToPage('portfolio')} className="text-sm text-[#DDD3C5] gold-underline hover:text-[#D9B061] transition-colors">Portfolio</button>
+          <button onClick={() => navigateToPage('about')} className="text-sm text-[#DDD3C5] gold-underline hover:text-[#D9B061] transition-colors">About</button>
+          <button onClick={() => navigateToPage('membership')} className="text-sm text-[#DDD3C5] gold-underline hover:text-[#D9B061] transition-colors">Membership</button>
+          <button onClick={() => navigateToPage('blog')} className="text-sm text-[#DDD3C5] gold-underline hover:text-[#D9B061] transition-colors">Blog</button>
+          <button onClick={() => navigateToPage('contact')} className="text-sm text-[#DDD3C5] gold-underline hover:text-[#D9B061] transition-colors">Contact</button>
         </div>
 
         <div className="flex items-center gap-4">
           <button
             onClick={() => setShowBookingDialog(true)}
-            className="text-sm text-[#2C2C2C] gold-underline hidden sm:block"
+            className="text-sm text-[#DDD3C5] gold-underline hidden sm:block"
           >
             Book
           </button>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-[#2C2C2C]"
+            className="md:hidden text-[#DDD3C5]"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
