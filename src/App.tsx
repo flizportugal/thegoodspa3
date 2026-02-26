@@ -225,8 +225,8 @@ function App() {
       <section ref={heroRef} className="relative h-screen w-full overflow-hidden">
         <div className="hero-bg absolute inset-0">
           <img 
-            src="/images/hero_robe.jpg" 
-            alt="The Good Life, Delivered." 
+            src="/images/hf_20260225_232954_402b0aaa-87f2-4c41-b54f-edda938cf74d.jpeg"
+            alt="The Good Life, Delivered."
             className="w-full h-full object-cover"
           />
           <div className="vignette-overlay absolute inset-0" />
